@@ -5,115 +5,38 @@
   <base target="_top">
   <title>2026 Lunar New Year Zodiac Sign</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       margin: 0;
       padding: 0;
-      min-height: 100vh;
+      background: #f5f5f7;
       display: flex;
       align-items: center;
       justify-content: center;
-      background:
-        radial-gradient(circle at top left, #ffecd2 0, #ffe0e0 30%, transparent 60%),
-        radial-gradient(circle at bottom right, #ffd6a5 0, #ffb3b3 40%, #b30000 100%);
-      background-color: #b30000;
+      min-height: 100vh;
     }
 
     .card {
       background: #ffffff;
       padding: 24px 28px;
-      border-radius: 18px;
-      box-shadow: 0 16px 40px rgba(0,0,0,0.18);
-      max-width: 440px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      max-width: 420px;
       width: 100%;
-      position: relative;
-      overflow: hidden;
-      border: 2px solid #f97316;
-    }
-
-    /* little decorative border corners */
-    .card::before,
-    .card::after {
-      content: "";
-      position: absolute;
-      width: 70px;
-      height: 70px;
-      border: 3px solid #facc15;
-      border-radius: 18px;
-      opacity: 0.35;
-    }
-    .card::before {
-      top: -20px;
-      left: -20px;
-      border-right: none;
-      border-bottom: none;
-    }
-    .card::after {
-      bottom: -20px;
-      right: -20px;
-      border-left: none;
-      border-top: none;
-    }
-
-    .card-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 10px;
-    }
-
-    .card-header-text {
-      flex: 1;
     }
 
     h1 {
-      font-size: 1.45rem;
-      margin: 0 0 0.25rem;
-      color: #7c2d12;
+      font-size: 1.5rem;
+      margin-top: 0;
+      margin-bottom: 0.25rem;
     }
 
     p.subtitle {
-      margin: 0;
-      color: #4b5563;
-      font-size: 0.9rem;
-    }
-
-    .year-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      background: #b91c1c;
-      color: #fef3c7;
-      border-radius: 999px;
-      padding: 0.25rem 0.75rem;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 0.6rem;
-    }
-
-    .horse-emoji {
-      font-size: 1rem;
-    }
-
-    .horse-img {
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #facc15;
-      background: #fffbeb;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-    }
-
-    form {
-      margin-top: 0.75rem;
+      margin-top: 0;
+      margin-bottom: 1.25rem;
+      color: #555;
+      font-size: 0.95rem;
     }
 
     label {
@@ -121,17 +44,277 @@
       margin-bottom: 0.35rem;
       font-weight: 600;
       font-size: 0.9rem;
-      color: #374151;
     }
 
     input[type="date"] {
       width: 100%;
+      box-sizing: border-box;
       padding: 0.5rem 0.6rem;
       border-radius: 8px;
-      border: 1px solid #d1d5db;
+      border: 1px solid #ccc;
       font-size: 0.95rem;
-      outline: none;
-      transition: border-color 0.15s, box-shadow 0.15s;
     }
 
-    input[type="date]()
+    button {
+      margin-top: 0.75rem;
+      width: 100%;
+      padding: 0.7rem 1rem;
+      border-radius: 999px;
+      border: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      background: #FF7583;
+      color: #FFDF00;
+    }
+
+    button:hover {
+      opacity: 0.92;
+    }
+
+    .result {
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid #eee;
+      display: none; /* hidden until we have a result */
+    }
+
+    .sign {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .sign small {
+      font-weight: 400;
+      color: #555;
+      margin-left: 0.25rem;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 0.1rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid #e5e7eb;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #6b7280;
+      margin-top: 0.1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-weight: 600;
+      margin-top: 0.75rem;
+      margin-bottom: 0.25rem;
+      font-size: 0.9rem;
+    }
+
+    .fortune-text {
+      font-size: 0.9rem;
+      color: #333;
+      line-height: 1.5;
+      white-space: pre-line;
+    }
+
+    .error {
+      margin-top: 0.5rem;
+      color: #b91c1c;
+      font-size: 0.85rem;
+      display: none;
+    }
+
+    footer {
+      margin-top: 1rem;
+      font-size: 0.75rem;
+      color: #9ca3af;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>2026 Lunar New Year Zodiac Sign</h1>
+    <p class="subtitle">Enter your birthdate to see your Chinese zodiac sign and a simple forecast for the year 2026.</p>
+
+    <form id="zodiacForm">
+      <label for="birthdate">Birthdate</label>
+      <input type="date" id="birthdate" required>
+      <button type="submit">Show My Luck in 2026</button>
+      <div id="error" class="error"></div>
+    </form>
+
+    <div id="result" class="result">
+      <div class="sign" id="signText"></div>
+      <div class="tag" id="yearTag"></div>
+
+      <div class="section-title">Overall luck in 2026</div>
+      <p class="fortune-text" id="overallText"></p>
+
+      <div class="section-title">Career & money</div>
+      <p class="fortune-text" id="careerText"></p>
+
+      <div class="section-title">Love & relationships</div>
+      <p class="fortune-text" id="loveText"></p>
+
+      <div class="section-title">Health & advice</div>
+      <p class="fortune-text" id="healthText"></p>
+    </div>
+
+  <script>
+    const animals = [
+      "Rat",
+      "Ox",
+      "Tiger",
+      "Rabbit",
+      "Dragon",
+      "Snake",
+      "Horse",
+      "Goat",
+      "Monkey",
+      "Rooster",
+      "Dog",
+      "Pig"
+    ];
+
+    const fortunes2026 = {
+      "Rat": {
+        overall: "A year of new momentum. Horse energy pushes you to move, travel, or change something important. Some instability at first, but good potential if you’re brave.",
+        career: "Good for changing direction or experimenting. Avoid taking on too many projects at once. Networking helps a lot this year.",
+        love: "More social energy and chances to meet new people. In relationships, keep promises and avoid emotional impulsiveness.",
+        health: "Watch your sleep and nervous system. Short trips and light exercise are good for you—don’t stay stuck indoors."
+      },
+      "Ox": {
+        overall: "Moderate luck with a few challenges. The fast Horse year doesn’t fully match your steady Ox nature, but long-term gains are possible if you stay patient.",
+        career: "Work may feel rushed or chaotic. Focus on solid, long-term tasks and don’t let others’ haste force you into bad decisions.",
+        love: "Be more expressive; others can’t always guess what you’re feeling. Avoid stubborn arguments about small things.",
+        health: "Guard against stress from overwork. Gentle routines and good sleep are more important than extreme workouts."
+      },
+      "Tiger": {
+        overall: "Energetic, dynamic, and generally favorable. Tiger and Horse harmonize, bringing opportunities, travel, and big moves.",
+        career: "A strong year for taking the lead, starting projects, or changing jobs. Just be careful with risky impulsive decisions.",
+        love: "Passionate energy rises. Good for romance if you balance excitement with responsibility.",
+        health: "Good vitality, but watch out for minor accidents if you rush. Warm-ups and stretches are your friends."
+      },
+      "Rabbit": {
+        overall: "Quieter, mixed luck. After intense years, 2026 asks you to simplify, stabilize, and protect your emotional world.",
+        career: "Not bad, but you may feel sensitive to pressure. Look for cooperative environments and avoid harsh competition.",
+        love: "Nurturing relationships matter more than drama. Honest conversations can heal old misunderstandings.",
+        health: "Take care of mood and digestion. Calm hobbies and nature time are especially helpful."
+      },
+      "Dragon": {
+        overall: "A year of rebuilding and expanding. Horse energy supports bold moves and visible progress if you act with wisdom.",
+        career: "Good for promotion, leadership, or public visibility. Avoid arrogance and listen to feedback.",
+        love: "Charisma is strong. Don’t juggle too many people or promises—keep things clean and sincere.",
+        health: "Mind your heart and circulation. Balanced exercise is ideal; avoid going from zero to extreme."
+      },
+      "Snake": {
+        overall: "Strategic growth. Things may move quickly on the surface, but your true advantage is planning and timing.",
+        career: "Behind-the-scenes work and research pay off. Be cautious with contracts and read the fine print.",
+        love: "Deeper emotional connections are favored over casual flings. Observe carefully before committing.",
+        health: "Protect your neck, back, and eyes from strain. Meditation or quiet time will keep your energy balanced."
+      },
+      "Horse": {
+        overall: "Your own year’s element can bring high energy and big shifts. Lots of movement, opportunities, and changes.",
+        career: "Momentum is strong, but you must avoid burning out. Choose a few main directions instead of sprinting everywhere.",
+        love: "Exciting, but sometimes unstable. If you want something long-term, slow down and listen more.",
+        health: "Vitality is high—still, pace yourself. Overexertion and impulsive actions can lead to minor issues."
+      },
+      "Goat": {
+        overall: "Generally favorable. Goat works relatively well with Horse, bringing social support and creativity.",
+        career: "Teamwork is highlighted. Look for cooperative projects and people who appreciate your soft strengths.",
+        love: "Romantic and emotional life can blossom if you communicate clearly rather than hinting.",
+        health: "Balance indulgence with discipline. Art, music, and gentle movement all benefit your wellbeing."
+      },
+      "Monkey": {
+        overall: "A lively, changeable year with many ideas and options. Good for learning, networking, and travel.",
+        career: "Great for skill-building and side projects. Don’t scatter your focus—finish what you start.",
+        love: "Playful energy attracts people, but be honest about your intentions. Avoid mixed signals.",
+        health: "Move regularly and avoid too much screen time. Mental overstimulation can tire your body."
+      },
+      "Rooster": {
+        overall: "Mixed but manageable. You may feel that others are unorganized or impulsive; your challenge is adapting without losing standards.",
+        career: "Details and discipline are still your strengths, but try not to be overly critical. Some good chances appear later in the year.",
+        love: "Practice patience. Avoid correcting your partner too much, and focus on appreciation instead.",
+        health: "Take care of lungs and throat. Fresh air, breathing exercises, and steady routines help."
+      },
+      "Dog": {
+        overall: "A year of testing values. You may be asked to choose what really matters and let go of what doesn’t.",
+        career: "Loyalty and integrity are rewarded, but avoid stubbornly staying in the wrong place just out of duty.",
+        love: "Honesty is key. Good for deepening existing bonds if you speak from the heart.",
+        health: "Stress management is important. Walking, pets, or time with trusted friends are healing."
+      },
+      "Pig": {
+        overall: "Generally positive and supportive. Opportunities appear through relationships, kindness, and social circles.",
+        career: "Cooperative projects and service-oriented roles go well. Just watch for procrastination.",
+        love: "Warm, affectionate energy. Good for both singles and couples to build or deepen emotional security.",
+        health: "Focus on digestion and good food choices. Gentle exercise is better than extremes."
+      }
+    };
+
+    function getZodiacSign(date) {
+      const year = date.getFullYear();
+      const month = date.getMonth() + 1;
+      const day = date.getDate();
+
+      // Simple rule: if born before Feb 4, treat as previous zodiac year
+      let zodiacYear = year;
+      if (month < 2 || (month === 2 && day < 4)) {
+        zodiacYear = year - 1;
+      }
+
+      let index = (zodiacYear - 4) % 12;
+      if (index < 0) index += 12;
+
+      return { animal: animals[index], zodiacYear };
+    }
+
+    document.getElementById("zodiacForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const birthInput = document.getElementById("birthdate").value;
+      const errorEl = document.getElementById("error");
+      const resultEl = document.getElementById("result");
+
+      if (!birthInput) {
+        errorEl.textContent = "Please select a valid birthdate.";
+        errorEl.style.display = "block";
+        resultEl.style.display = "none";
+        return;
+      }
+
+      const birthDate = new Date(birthInput);
+      if (isNaN(birthDate.getTime())) {
+        errorEl.textContent = "The date format looks invalid.";
+        errorEl.style.display = "block";
+        resultEl.style.display = "none";
+        return;
+      }
+
+      errorEl.style.display = "none";
+
+      const { animal, zodiacYear } = getZodiacSign(birthDate);
+      const fortune = fortunes2026[animal];
+
+      document.getElementById("signText").textContent = `Your sign: ${animal}`;
+      document.getElementById("yearTag").textContent =
+        `Born in the lunar year around ${zodiacYear} • 2026 is the Year of the Horse`;
+
+      if (fortune) {
+        document.getElementById("overallText").textContent = fortune.overall;
+        document.getElementById("careerText").textContent = fortune.career;
+        document.getElementById("loveText").textContent = fortune.love;
+        document.getElementById("healthText").textContent = fortune.health;
+      } else {
+        document.getElementById("overallText").textContent =
+          "No fortune text found for this sign yet.";
+        document.getElementById("careerText").textContent = "";
+        document.getElementById("loveText").textContent = "";
+        document.getElementById("healthText").textContent = "";
+      }
+
+      resultEl.style.display = "block";
+    });
+  </script>
+</body>
+</html>
