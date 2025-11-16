@@ -5,71 +5,156 @@
   <base target="_top">
   <title>2026 Lunar New Year Zodiac Sign</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-  body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    margin: 0;
-    padding: 0;
 
-    background-image: url("HorseZodiac2026.png");
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-color: #b30000;
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    min-height: 100vh;
-  }
+      background-image: url("HorseZodiac2026.png");
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+      background-color: #b30000;
 
-.card {
-  background: #EBB866;
-  padding: 24px 28px;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-  max-width: 420px;
-  width: 100%;
-  margin-top: 160px;      /* 👈 move center block DOWN */
-}
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
 
-/* footer — stays close to card */
-footer {
-  margin-top: 40px;
-  color: #ffffff;
-  font-size: 0.8rem;
-  text-align: center;
-  max-width: 420px;
-  width: 100%;
-  line-height: 1.4;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
-}
+    /* Card shifted downward to show horse head */
+    .card {
+      background: #EBB866;
+      padding: 24px 28px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.28);
+      max-width: 420px;
+      width: 100%;
+      margin-top: 160px; /* MAIN OFFSET FOR CARD */
+    }
 
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  .card {
-    margin-top: 140px;     /* slightly less for mobile but still DOWN */
-    margin-left: 16px;
-    margin-right: 16px;
-  }
+    h1 {
+      font-size: 1.5rem;
+      margin-top: 0;
+      margin-bottom: 0.25rem;
+    }
 
-  footer {
-    margin-top: 32px;
-  }
-}
+    p.subtitle {
+      margin-top: 0;
+      margin-bottom: 1.25rem;
+      color: #555;
+      font-size: 0.95rem;
+    }
 
-</style>
+    label {
+      display: block;
+      margin-bottom: 0.35rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
 
+    input[type="date"] {
+      width: 100%;
+      padding: 0.5rem 0.6rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1.25rem;
+    }
 
+    button {
+      margin-top: 0.75rem;
+      width: 100%;
+      padding: 0.7rem 1rem;
+      border-radius: 999px;
+      border: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      background: #FF0000;
+      color: #FFDF00;
+    }
+
+    button:hover {
+      opacity: 0.92;
+    }
+
+    .result {
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid #eee;
+      display: none;
+    }
+
+    .sign {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 0.1rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid #e5e7eb;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      color: #6b7280;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-weight: 600;
+      margin-top: 0.75rem;
+      font-size: 0.9rem;
+    }
+
+    .fortune-text {
+      font-size: 0.9rem;
+      color: #333;
+      line-height: 1.5;
+      white-space: pre-line;
+    }
+
+    .error {
+      margin-top: 0.5rem;
+      color: #b91c1c;
+      font-size: 0.85rem;
+      display: none;
+    }
+
+    /* Footer styling */
+    footer {
+      margin-top: 40px; /* space under card */
+      font-size: 0.8rem;
+      color: white;
+      text-align: center;
+      line-height: 1.35;
+      max-width: 420px;
+      width: 100%;
+      padding-bottom: 32px;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+    }
+
+    /* Mobile tweaks */
+    @media (max-width: 768px) {
+      .card {
+        margin-top: 130px;
+        margin-left: 16px;
+        margin-right: 16px;
+      }
+      footer {
+        margin-top: 28px;
+      }
+    }
+  </style>
 </head>
+
 <body>
+
   <div class="card">
     <h1>2026 Lunar New Year Zodiac Sign</h1>
-    <p class="subtitle">
-      2026 is the Year of the Horse! Enter your birthdate to see your Chinese zodiac sign
-      and a simple forecast for the year 2026.
-    </p>
+    <p class="subtitle">2026 is the Year of the Horse! Enter your birthdate to see your Chinese zodiac sign and a simple forecast for the year 2026 (For entertainment purposes only).</p>
 
     <form id="zodiacForm">
       <label for="birthdate">Birthdate</label>
@@ -85,39 +170,26 @@ footer {
       <div class="section-title">Overall luck in 2026</div>
       <p class="fortune-text" id="overallText"></p>
 
-      <div class="section-title">Career &amp; money</div>
+      <div class="section-title">Career & money</div>
       <p class="fortune-text" id="careerText"></p>
 
-      <div class="section-title">Love &amp; relationships</div>
+      <div class="section-title">Love & relationships</div>
       <p class="fortune-text" id="loveText"></p>
 
-      <div class="section-title">Health &amp; advice</div>
+      <div class="section-title">Health & advice</div>
       <p class="fortune-text" id="healthText"></p>
-   
-  </div> <!-- closes .result -->
-</div> <!-- closes .card -->
+    </div>
+  </div>
 
-<footer>
-  <p>
-    Zodiac description summaries were adapted from various publicly available Lunar New Year resources,
+  <footer>
+    Zodiac description summaries were adapted from various publicly available Lunar New Year resources,  
     and for entertainment purposes only. Site design and code by Yi Zheng.
-  </p>
-</footer>
+  </footer>
 
   <script>
     const animals = [
-      "Rat",
-      "Ox",
-      "Tiger",
-      "Rabbit",
-      "Dragon",
-      "Snake",
-      "Horse",
-      "Goat",
-      "Monkey",
-      "Rooster",
-      "Dog",
-      "Pig"
+      "Rat","Ox","Tiger","Rabbit","Dragon","Snake",
+      "Horse","Goat","Monkey","Rooster","Dog","Pig"
     ];
 
     const fortunes2026 = {
@@ -200,11 +272,8 @@ footer {
       const month = date.getMonth() + 1;
       const day = date.getDate();
 
-      // Simple rule: if born before Feb 4, treat as previous zodiac year
       let zodiacYear = year;
-      if (month < 2 || (month === 2 && day < 4)) {
-        zodiacYear = year - 1;
-      }
+      if (month < 2 || (month === 2 && day < 4)) zodiacYear--;
 
       let index = (zodiacYear - 4) % 12;
       if (index < 0) index += 12;
@@ -212,8 +281,9 @@ footer {
       return { animal: animals[index], zodiacYear };
     }
 
-    document.getElementById("zodiacForm").addEventListener("submit", function (e) {
+    document.getElementById("zodiacForm").addEventListener("submit", function(e) {
       e.preventDefault();
+
       const birthInput = document.getElementById("birthdate").value;
       const errorEl = document.getElementById("error");
       const resultEl = document.getElementById("result");
@@ -240,21 +310,14 @@ footer {
 
       document.getElementById("signText").textContent = `Your Zodiac Sign: ${animal}`;
 
-      if (fortune) {
-        document.getElementById("overallText").textContent = fortune.overall;
-        document.getElementById("careerText").textContent = fortune.career;
-        document.getElementById("loveText").textContent = fortune.love;
-        document.getElementById("healthText").textContent = fortune.health;
-      } else {
-        document.getElementById("overallText").textContent =
-          "No fortune text found for this sign yet.";
-        document.getElementById("careerText").textContent = "";
-        document.getElementById("loveText").textContent = "";
-        document.getElementById("healthText").textContent = "";
-      }
+      document.getElementById("overallText").textContent = fortune.overall;
+      document.getElementById("careerText").textContent = fortune.career;
+      document.getElementById("loveText").textContent = fortune.love;
+      document.getElementById("healthText").textContent = fortune.health;
 
       resultEl.style.display = "block";
     });
   </script>
+
 </body>
 </html>
