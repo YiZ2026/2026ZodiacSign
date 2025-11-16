@@ -142,28 +142,25 @@
       padding: 0 16px 16px;
     }
 
-    /* 📱 Mobile tweaks */
-    @media (max-width: 600px) {
-      body {
-        align-items: stretch;
-        justify-content: flex-start;
-      }
+  footer {
+      margin-top: auto;
+      font-size: 0.75rem;
+      color: #eee;
+      text-align: center;
+      padding: 0 16px 16px;
+    }
 
-      .card {
-        margin: 16px;
-        margin-top: 72px;
-        padding: 16px 18px;
-        border-radius: 12px;
-      }
-
-       /* Fix card spacing on mobile */   /* 👈 ADD THIS RIGHT BELOW */
     @media (max-width: 600px) {
       .card {
-        margin: 24px;        /* Adds left & right padding */
+        width: calc(100% - 48px);  /* 👈 this fixes the right edge */
+        margin: 24px;
         margin-top: 80px;
+        padding: 16px 18px;
         border-radius: 16px;
+        box-sizing: border-box;
       }
     }
+  </style>
       h1 {
         font-size: 1.25rem;
       }
@@ -188,7 +185,7 @@
   <div class="card">
     <h1>2026 Lunar New Year Zodiac Sign</h1>
     <p class="subtitle">
-      2026 is the Year of the Horse! Enter your birthdate to see your Chinese zodiac sign and a simple forecast for the year 2026 (For entertainment purposes only).
+      2026 is the Year of the Horse! Enter your birthdate to see your Chinese zodiac sign and a simple forecast for the year 2026.
     </p>
 
     <form id="zodiacForm">
