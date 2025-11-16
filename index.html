@@ -5,25 +5,25 @@
   <base target="_top">
   <title>2026 Lunar New Year Zodiac Sign</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
-  body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  margin: 0;
-  padding: 0;
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
 
-  /* Your horse background */
-  background-image: url("HorseZodiac2026.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: #b30000;
+      background-image: url("HorseZodiac2026.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: #b30000;
 
-  display: flex;
-  flex-direction: column;   /* 👈 THIS STACKS CARD + FOOTER TOP TO BOTTOM */
-  align-items: center;
-  justify-content: flex-start;  /* top of the page, not center */
-  min-height: 100vh;
-}
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+    }
 
     .card {
       background: #EBB866;
@@ -32,7 +32,7 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.08);
       max-width: 420px;
       width: 100%;
-      margin-top: 200px;   /* 👈 ADD THIS */
+      margin: 15vh auto 24px; /* responsive instead of 200px */
     }
 
     h1 {
@@ -135,17 +135,53 @@
     }
 
     footer {
-      margin-top: 1rem;
+      margin-top: auto;
       font-size: 0.75rem;
-      color: #9ca3af;
+      color: #eee;
       text-align: center;
+      padding: 0 16px 16px;
+    }
+
+    /* 📱 Mobile tweaks */
+    @media (max-width: 600px) {
+      body {
+        align-items: stretch;
+        justify-content: flex-start;
+      }
+
+      .card {
+        margin: 16px;
+        margin-top: 72px;
+        padding: 16px 18px;
+        border-radius: 12px;
+      }
+
+      h1 {
+        font-size: 1.25rem;
+      }
+
+      p.subtitle,
+      .fortune-text {
+        font-size: 0.9rem;
+      }
+
+      label,
+      .section-title {
+        font-size: 0.85rem;
+      }
+
+      input[type="date"] {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
 <body>
   <div class="card">
     <h1>2026 Lunar New Year Zodiac Sign</h1>
-    <p class="subtitle">2026 is the Year of the Horse! Enter your birthdate to see your Chinese zodiac sign and a simple forecast for the year 2026 (For entertainment purposes only).</p>
+    <p class="subtitle">
+      2026 is the Year of the Horse! Enter your birthdate to see your Chinese zodiac sign and a simple forecast for the year 2026 (For entertainment purposes only).
+    </p>
 
     <form id="zodiacForm">
       <label for="birthdate">Birthdate</label>
@@ -170,22 +206,19 @@
       <div class="section-title">Health & advice</div>
       <p class="fortune-text" id="healthText"></p>
     </div>
-  </div> <!-- closes .card -->
+  </div>
+
+  <footer>
+    <p>
+      Zodiac description summaries were adapted from various publicly available Lunar New Year resources and for entertainment purposes only.
+      Site design and code by Yi Zheng.
+    </p>
+  </footer>
 
   <script>
     const animals = [
-      "Rat",
-      "Ox",
-      "Tiger",
-      "Rabbit",
-      "Dragon",
-      "Snake",
-      "Horse",
-      "Goat",
-      "Monkey",
-      "Rooster",
-      "Dog",
-      "Pig"
+      "Rat","Ox","Tiger","Rabbit","Dragon","Snake",
+      "Horse","Goat","Monkey","Rooster","Dog","Pig"
     ];
 
     const fortunes2026 = {
@@ -307,6 +340,7 @@
       const fortune = fortunes2026[animal];
 
       document.getElementById("signText").textContent = `Your Zodiac Sign: ${animal}`;
+      document.getElementById("yearTag").textContent = `Year of the ${animal} (${zodiacYear})`;
 
       if (fortune) {
         document.getElementById("overallText").textContent = fortune.overall;
@@ -324,20 +358,5 @@
       resultEl.style.display = "block";
     });
   </script>
- 
-    <div id="result" class="result">
-      ...
-    </div>
-  </div>   <!-- 👈 CLOSE THE CARD DIV HERE -->
-
-  <footer>
-    <p style="font-size: 0.75rem; color: #eee; text-align: center; margin-top: 1rem;">
-      Zodiac description summaries were adapted from various publicly available
-      Lunar New Year resources and for entertainment purposes only. Site design and code by Yi Zheng.
-    </p>
-  </footer>
-
-  <script>
- 
 </body>
 </html>
