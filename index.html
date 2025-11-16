@@ -6,12 +6,12 @@
   <title>2026 Lunar New Year Zodiac Sign</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-   body {
+  body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   margin: 0;
   padding: 0;
 
-  /* if you’re using the horse image, keep that here instead of the plain background */
+  /* Your horse background */
   background-image: url("HorseZodiac2026.png");
   background-size: cover;
   background-position: center;
@@ -19,9 +19,9 @@
   background-color: #b30000;
 
   display: flex;
-  flex-direction: column;   /* 👈 stack card and footer vertically */
+  flex-direction: column;   /* 👈 THIS STACKS CARD + FOOTER TOP TO BOTTOM */
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;  /* top of the page, not center */
   min-height: 100vh;
 }
 
@@ -324,12 +324,19 @@
     });
   </script>
   
+    <div id="result" class="result">
+      ...
+    </div>
+  </div>   <!-- 👈 CLOSE THE CARD DIV HERE -->
+
   <footer>
-    <p style="font-size: 0.75rem; color: #eee; text-align: center; margin-top: 2rem;">
-      Zodiac description summaries were adapted from various publicly available astrology and Lunar New Year resources.
-      Site design and code by Yi Zheng.
+    <p style="font-size: 0.75rem; color: #eee; text-align: center; margin-top: 1rem;">
+      Zodiac description summaries were adapted from various publicly available
+      Lunar New Year resources. Site design and code by Yi Zheng.
     </p>
   </footer>
+
+  <script>
   
 </body>
 </html>
