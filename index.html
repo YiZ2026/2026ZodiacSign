@@ -11,17 +11,16 @@
     margin: 0;
     padding: 0;
 
-    /* Horse background */
     background-image: url("HorseZodiac2026.png");
     background-size: cover;
-    background-position: center -80px; /* shift image upward so horse head shows on desktop */
+    background-position: center top;
     background-repeat: no-repeat;
     background-color: #b30000;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* center vertically */
+    justify-content: flex-start;
     min-height: 100vh;
   }
 
@@ -32,10 +31,7 @@
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     max-width: 420px;
     width: 100%;
-    margin: 16px;
-
-    /* 👇 SHIFT BLOCK DOWNWARD */
-    transform: translateY(40px);
+    margin-top: 160px;        /* 👈 MOVE BLOCK DOWN SIGNIFICANTLY */
   }
 
   h1 {
@@ -89,68 +85,30 @@
     display: none;
   }
 
-  .sign {
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 0.25rem;
-  }
-
-  .tag {
-    display: inline-block;
-    padding: 0.1rem 0.5rem;
-    border-radius: 999px;
-    border: 1px solid #e5e7eb;
-    font-size: 0.7rem;
-    color: #6b7280;
-    margin-top: 0.1rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .section-title {
-    font-weight: 600;
-    margin-top: 0.75rem;
-    margin-bottom: 0.25rem;
-    font-size: 0.9rem;
-  }
-
-  .fortune-text {
-    font-size: 0.9rem;
-    color: #333;
-    line-height: 1.5;
-    white-space: pre-line;
-  }
-
-  .error {
-    margin-top: 0.5rem;
-    color: #b91c1c;
-    font-size: 0.85rem;
-    display: none;
-  }
-
   footer {
-    margin-top: 1rem;
-    margin-bottom: 16px;
+    margin-top: 20px;
     font-size: 0.75rem;
     color: #f9fafb;
     text-align: center;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.4);
     padding: 0 16px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.4);
   }
 
-  /* MOBILE FIX */
+  /* 📱 Mobile adjustments */
   @media (max-width: 768px) {
     body {
-      justify-content: center;          /* center vertically */
-      background-position: center top;  /* show MORE horse head on phones */
-      padding: 16px 0;
+      justify-content: flex-start;
+      background-position: center top;
     }
 
     .card {
-      margin: 0 16px;
-      transform: translateY(20px); /* slightly smaller downward shift on mobile */
+      margin-top: 120px;   /* Slightly smaller drop for phones */
+      margin-left: 16px;
+      margin-right: 16px;
     }
   }
 </style>
+
 
 </head>
 <body>
