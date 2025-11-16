@@ -156,6 +156,14 @@
         border-radius: 12px;
       }
 
+       /* Fix card spacing on mobile */   /* 👈 ADD THIS RIGHT BELOW */
+    @media (max-width: 600px) {
+      .card {
+        margin: 24px;        /* Adds left & right padding */
+        margin-top: 80px;
+        border-radius: 16px;
+      }
+    }
       h1 {
         font-size: 1.25rem;
       }
