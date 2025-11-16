@@ -24,92 +24,41 @@
     min-height: 100vh;
   }
 
-  .card {
-    background: #EBB866;
-    padding: 24px 28px;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    max-width: 420px;
-    width: 100%;
-    margin-top: 120px;        /* 👈 MOVE BLOCK DOWN SIGNIFICANTLY */
-  }
+.card {
+  background: #EBB866;
+  padding: 24px 28px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  max-width: 420px;
+  width: 100%;
+  margin-top: 160px;      /* 👈 move center block DOWN */
+}
 
-  h1 {
-    font-size: 1.5rem;
-    margin-top: 0;
-    margin-bottom: 0.25rem;
-  }
-
-  p.subtitle {
-    margin-top: 0;
-    margin-bottom: 1.25rem;
-    color: #555;
-    font-size: 0.95rem;
-  }
-
-  label {
-    display: block;
-    margin-bottom: 0.35rem;
-    font-weight: 600;
-    font-size: 0.9rem;
-  }
-
-  input[type="date"] {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 0.5rem 0.6rem;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 1.25rem;
-  }
-
-  button {
-    margin-top: 0.75rem;
-    width: 100%;
-    padding: 0.7rem 1rem;
-    border-radius: 999px;
-    border: none;
-    font-size: 0.95rem;
-    font-weight: 600;
-    cursor: pointer;
-    background: #FF0000;
-    color: #FFDF00;
-  }
-
-  button:hover { opacity: 0.92; }
-
-  .result {
-    margin-top: 1.5rem;
-    padding-top: 1rem;
-    border-top: 1px solid #eee;
-    display: none;
-  }
-
+/* footer — stays close to card */
 footer {
-  margin-top: 160px;          /* move footer further down */
-  color: #ffffff;             /* white text */
+  margin-top: 40px;
+  color: #ffffff;
   font-size: 0.8rem;
   text-align: center;
-  max-width: 420px;           /* match width of card */
+  max-width: 420px;
   width: 100%;
   line-height: 1.4;
   text-shadow: 0 1px 3px rgba(0,0,0,0.5);
 }
 
-
-  /* 📱 Mobile adjustments */
-  @media (max-width: 768px) {
-    body {
-      justify-content: flex-start;
-      background-position: center top;
-    }
-
-    .card {
-      margin-top: 120px;   /* Slightly smaller drop for phones */
-      margin-left: 16px;
-      margin-right: 16px;
-    }
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .card {
+    margin-top: 140px;     /* slightly less for mobile but still DOWN */
+    margin-left: 16px;
+    margin-right: 16px;
   }
+
+  footer {
+    margin-top: 32px;
+  }
+}
+
 </style>
 
 
