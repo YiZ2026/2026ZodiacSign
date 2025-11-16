@@ -5,7 +5,7 @@
   <base target="_top">
   <title>2026 Lunar New Year Zodiac Sign</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
- <style>
+<style>
   body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     margin: 0;
@@ -14,14 +14,14 @@
     /* Horse background */
     background-image: url("HorseZodiac2026.png");
     background-size: cover;
-    background-position: center -80px; /* desktop: shift image upward so horse head shows */
+    background-position: center -80px; /* shift image upward so horse head shows on desktop */
     background-repeat: no-repeat;
     background-color: #b30000;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* DESKTOP: center card vertically */
+    justify-content: center; /* center vertically */
     min-height: 100vh;
   }
 
@@ -33,6 +33,9 @@
     max-width: 420px;
     width: 100%;
     margin: 16px;
+
+    /* 👇 SHIFT BLOCK DOWNWARD */
+    transform: translateY(40px);
   }
 
   h1 {
@@ -144,6 +147,7 @@
 
     .card {
       margin: 0 16px;
+      transform: translateY(20px); /* slightly smaller downward shift on mobile */
     }
   }
 </style>
@@ -154,7 +158,7 @@
     <h1>2026 Lunar New Year Zodiac Sign</h1>
     <p class="subtitle">
       2026 is the Year of the Horse! Enter your birthdate to see your Chinese zodiac sign
-      and a simple forecast for the year 2026 (for entertainment purposes only).
+      and a simple forecast for the year 2026.
     </p>
 
     <form id="zodiacForm">
@@ -183,8 +187,8 @@
   </div> <!-- closes .card -->
 
   <footer>
-    Zodiac description summaries were adapted from various publicly available
-    Lunar New Year resources. Site design and code by Yi Zheng.
+    Site design and code by Yi Zheng. Zodiac description summaries were adapted from various publicly available
+    Lunar New Year resources, and for entertainment purposes only. .
   </footer>
 
   <script>
