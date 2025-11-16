@@ -85,13 +85,17 @@
     display: none;
   }
 
-   margin-top: 250px;   /* 👈 increase this number to move footer down */
-  font-size: 0.75rem;
-  color: #f9fafb;
+footer {
+  margin-top: 160px;          /* move footer further down */
+  color: #ffffff;             /* white text */
+  font-size: 0.8rem;
   text-align: center;
-  padding: 0 16px;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+  max-width: 420px;           /* match width of card */
+  width: 100%;
+  line-height: 1.4;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
 }
+
 
   /* 📱 Mobile adjustments */
   @media (max-width: 768px) {
@@ -140,13 +144,16 @@
 
       <div class="section-title">Health &amp; advice</div>
       <p class="fortune-text" id="healthText"></p>
-    </div>
-  </div> <!-- closes .card -->
+   
+  </div> <!-- closes .result -->
+</div> <!-- closes .card -->
 
-  <footer>
-    Zodiac description summaries were adapted from various publicly available
-    Lunar New Year resources, and for entertainment purposes only. Site design and code by Yi Zheng.
-  </footer>
+<footer>
+  <p>
+    Zodiac description summaries were adapted from various publicly available Lunar New Year resources,
+    and for entertainment purposes only. Site design and code by Yi Zheng.
+  </p>
+</footer>
 
   <script>
     const animals = [
