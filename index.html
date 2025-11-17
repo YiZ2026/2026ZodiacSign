@@ -13,8 +13,8 @@
       padding: 0;
 
       background-image: url("HorseZodiac2026.png");
-      background-size: cover;
-      background-position: center;
+      background-size: contain;
+      background-position: top center;
       background-repeat: no-repeat;
       background-color: #b30000;
 
@@ -32,7 +32,10 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.08);
       max-width: 420px;
       width: 100%;
-      margin: 15vh auto 24px; /* responsive instead of 200px */
+      margin-top: min(28dvh, 260px);   /* scales by screen height */
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 32px;
     }
 
     h1 {
@@ -142,23 +145,24 @@
       margin-top: 32px; /* <--adds space just below the card*/
     }
 
-  footer {
-      margin-top: auto;
+    footer {
+      margin-top: 32px;
       font-size: 0.75rem;
-      color: #eee;
       text-align: center;
-      padding: 0 16px 16px;
+      color: #eee;
+      padding: 0 16px 24px;
     }
-
-    @media (max-width: 600px) {
-      .card {
-        width: calc(100% - 48px);  /* 👈 this fixes the right edge */
-        margin: 22vh auto 24px;
-        padding: 20px 22px;
-        border-radius: 16px;
-        box-sizing: border-box;
-      }
-    }  
+    
+   @media (max-width: 600px) {
+  .card {
+    width: calc(100% - 48px);
+    margin-top: min(32dvh, 240px);  /* slightly more top spacing on phones */
+    margin-bottom: 24px;
+    padding: 20px;
+    border-radius: 16px;
+    box-sizing: border-box;
+  }
+} 
   </style>
 </head>
 <body>
