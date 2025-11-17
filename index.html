@@ -58,7 +58,7 @@
     input[type="date"] {
       width: 100%;
       box-sizing: border-box;
-      padding: 0.5rem 0.6rem;
+      padding: 0.5rem 0.9rem;
       border-radius: 8px;
       border: 1px solid #ccc;
       font-size: 1.25rem;
@@ -135,11 +135,11 @@
     }
 
     footer {
-      margin-top: auto;
       font-size: 0.75rem;
       color: #eee;
       text-align: center;
-      padding: 0 16px 16px;
+      padding: 16px;
+      margin-top: 32px; /* <--adds space just below the card*/
     }
 
   footer {
@@ -153,9 +153,8 @@
     @media (max-width: 600px) {
       .card {
         width: calc(100% - 48px);  /* 👈 this fixes the right edge */
-        margin: 24px;
-        margin-top: 80px;
-        padding: 16px 18px;
+        margin: 22vh auto 24px;
+        padding: 20px 22px;
         border-radius: 16px;
         box-sizing: border-box;
       }
